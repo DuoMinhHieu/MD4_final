@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <!DOCTYPE html>
+        <html xmlns:th="http://www.thymeleaf.org" lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+</head>
+<body>
+<a href="/customers/create">Create new customer</a>
+<h1>Customers</h1>
+<form action="/customers/search" method="get">
+    <input type="text" name="firstName" placeholder="Search by first name">
+    <button type="submit">Search</button>
+</form>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Typeofservice</th>
+        <th>daytrading</th>
+        <th>price</th>
+        <th>acreage</th>
+        <th>View</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="customer : ${customers}">
+        <tr>
+            <td th:text="${customer.firstName}"></td>
+            <td th:text="${customer.typeofservice}"></td>
+            <td th:text="${customer.daytrading}"></td>
+            <td th:text="${customer.price}"></td>
+            <td th:text="${customer.acreage}"></td>
+            <td><a th:href="@{/customers/view/__${customer.id}__ }">View</a></td>
+            <td><a th:href="@{/customers/delete/__${customer.id}__ }">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

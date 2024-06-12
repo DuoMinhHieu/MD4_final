@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delete Customer</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <h1>Delete Customer</h1>
+  <h2>Are you sure?</h2>
+  <a class="btn btn-primary mb-3" href="/customers">Customer List</a>
+  <form th:action="@{/customers/delete}" th:object="${customer}" method="post">
+    <input type="hidden" name="id" th:value="${customer.id}">
+    <table class="table table-bordered">
+      <tr>
+        <th>Name:</th>
+        <td th:text="${customer.firstName}"></td>
+      </tr>
+      <tr>
+        <th>Type of Service:</th>
+        <td th:text="${customer.typeofservice}"></td>
+      </tr>
+      <tr>
+        <th>Day Trading:</th>
+        <td th:text="${customer.daytrading}"></td>
+      </tr>
+      <tr>
+        <th>Price:</th>
+        <td th:text="${customer.price}"></td>
+      </tr>
+      <tr>
+        <th>Acreage:</th>
+        <td th:text="${customer.acreage}"></td>
+      </tr>
+    </table>
+    <button type="submit" class="btn btn-danger">Delete Customer</button>
+  </form>
+</div>
+</body>
+</html>

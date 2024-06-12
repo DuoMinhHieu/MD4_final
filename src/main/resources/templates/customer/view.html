@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Customer</title>
+</head>
+<body>
+<h1>Customer Details</h1>
+<p>
+    <a href="/customers">Back to Customer List</a>
+</p>
+<table>
+    <tr>
+        <td>Name:</td>
+        <td th:text="${customer.firstName}"></td>
+    </tr>
+    <tr>
+        <td>Type of Service:</td>
+        <td th:text="${customer.typeofservice}"></td>
+    </tr>
+    <tr>
+        <td>Day Trading:</td>
+        <td th:text="${customer.daytrading}"></td>
+    </tr>
+    <tr>
+        <td>Price:</td>
+        <td th:text="${customer.price}"></td>
+    </tr>
+    <tr>
+        <td>Acreage:</td>
+        <td th:text="${customer.acreage}"></td>
+    </tr>
+</table>
+</body>
+</html>
